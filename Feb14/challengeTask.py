@@ -6,26 +6,26 @@ class Publication:
 
 class Book(Publication):
     def __init__(self, title, author, pages, price):
-        Publication.__init__(title, price)
+        Publication.__init__(self,title, price)
         self.author = author
         self.pages = pages
 
 
 class Periodical(Publication):
     def __init__(self, title, publisher, price, period):
-        Publication.__init__(title, price)
+        Publication.__init__(self,title, price)
         self.period = period
         self.publisher = publisher
 
 
 class Magazine(Periodical):
     def __init__(self, title, publisher, price, period):
-        Periodical.__init__(title, publisher, price, period)
+        Periodical.__init__(self,title, publisher, price, period)
 
 
 class Newspaper(Periodical):
     def __init__(self, title, publisher, price, period):
-        Periodical.__init__(title, publisher, price, period)
+        Periodical.__init__(self,title, publisher, price, period)
 
 
 b1 = Book("Brave New World", "Aldous Huxley", 311, 29.0)
@@ -35,3 +35,5 @@ m1 = Magazine("Scientific American", "Springer Nature", 5.99, "Monthly")
 print(b1.author)
 print(n1.publisher)
 print(b1.price, m1.price, n1.price)
+
+# print(isinstance(m1, Periodical))
