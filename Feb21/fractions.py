@@ -13,7 +13,7 @@ class Fraction:
 
     @property
     def decimal(self):
-        return self.numer/self.denom
+        return round(self.numer/self.denom, 4)
 
     def __str__(self):
         return f'{self.__num}/{self.__denom}'
